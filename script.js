@@ -41,12 +41,8 @@ function createSite(root, url) {
         .then(json => {
             const { setup, links } = json;
             createUserPage(setup, links, root)
-
-
-
         })
         .then();
-
 
 }
 

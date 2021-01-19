@@ -13,7 +13,7 @@ h1{
     text-align: center;
 }
 
-.avatar-block{
+.avatar-block, .links-block{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -25,3 +25,4 @@ h1{
     width: 100px;
     height: 100px;
 }
+
