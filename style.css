@@ -10,6 +10,7 @@
 
 h1 {
     text-align: center;
+    margin: 10px;
 }
 
 .avatar-block,
@@ -20,6 +21,7 @@ h1 {
     align-items: center;
     color: white;
     font-family: "Roboto", sans-serif;
+    padding: 25px;
 }
 
 a {
@@ -32,16 +34,31 @@ a {
     height: 45px;
     box-sizing: border-box;
     text-align: center;
+    transition: all 0.6s;
 }
 
 a:hover {
-   opacity: .7;
-   transition: opacity 0.6s;
-    
+    opacity: .7;
+    transition: opacity 0.6s;
 }
 
+
+
 .avatar {
+    margin: 10px;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+}
+
+@media (max-width: 325px) {
+    h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 280px) {
+    h1 {
+        font-size: 25px;
+    }
 }
