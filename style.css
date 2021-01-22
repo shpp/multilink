@@ -22,7 +22,7 @@ h1 {
     align-items: center;
     color:#0000009d;
     font-family: "Roboto", sans-serif;
-    padding: 20px;
+    padding: 10px;
 }
 
 a {
@@ -46,11 +46,9 @@ a:hover {
     transition: all 0.5s;
 }
 
-
-
 .avatar {
     margin: 20px;
-    border: 2px solid gray;
+    border: 2px solid rgba(128, 128, 128, 0.842);
     border-radius: 50%;
     width: 150px;
     height: 150px;
