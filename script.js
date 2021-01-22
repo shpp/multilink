@@ -15,16 +15,19 @@ function createSite(root, url) {
 }
 
 function createUserPage(setup, links, root) {
+
+    const { pageBackgroundStyle, page, username, avatar, defaultButtonsStyle } = setup;
+
     const avatarBlock = document.createElement('div');
     avatarBlock.classList.add('avatar-block');
-    root.style = setup.pageBackgroundStyle;
-
-    setTitle(setup.title);
-    setAvatar(avatarBlock, setup.avatar);
-    setTitleText(avatarBlock, setup.username)
+    root.style = pageBackgroundStyle;
+    
+    setTitle(page);
+    setAvatar(avatarBlock, avatar);
+    setTitleText(avatarBlock, username)
 
     root.append(avatarBlock);
-    root.append(setLinks(links, setup.defaultButtonsStyle));
+    root.append(setLinks(links, defaultButtonsStyle));
 
 }
 
@@ -41,13 +44,13 @@ function setLinks(links, defaultButtonsStyle) {
 }
 
 function setLink(linkData, defaultButtonsStyle) {
-    const {link, text, customStyle} = linkData;
-    
+    const { link, text, customStyle } = linkData;
+
     const linkItem = document.createElement('a');
     linkItem.setAttribute('href', link);
     linkItem.innerText = text;
     linkItem.style = customStyle ? customStyle : defaultButtonsStyle;
-    
+
     return linkItem;
 }
 
