@@ -1,0 +1,5 @@
+{
+  "from": "fi-fo-nginx",
+  "volumes": [],
+  "cacheable-environment": []
+}
