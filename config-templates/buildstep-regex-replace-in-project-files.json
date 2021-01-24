@@ -2,7 +2,7 @@
   "in": [
     {
       "files": [
-        "./script.js"
+        "site/script.js"
       ],
       "replace": {
         "const url = 'https://lambda.shpp.me/multilink?page=*[^']*'": "const url = 'https://lambda.shpp.me/multilink?page=<<PROFILE_NAME>>'"
