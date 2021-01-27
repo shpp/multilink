@@ -61,6 +61,13 @@ function setLink(linkData, defaultButtonsStyle) {
     const linkText = document.createElement('span');
     linkText.innerText = text;
     linkItem.appendChild(linkText);
+    linkItem.onclick = function (e) {
+        ga('send', 'event', 'outbound', 'click', e.target.href, {
+            'transport': 'beacon',
+            'hitCallback': function(){document.location = e.target.href;}
+        });
+        return false
+    }
     if (customStyle || defaultButtonsStyle) {
         linkItem.style = defaultButtonsStyle + customStyle;
     } else {
