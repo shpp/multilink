@@ -1,6 +1,7 @@
 'use strict';
 
-const url = 'https://lambda.shpp.me/multilink?page=shpp';
+const params = new URLSearchParams(window.location.search)
+const url = `https://lambda.shpp.me/multilink?page=${params.get('page')}`;
 const root = document.querySelector('#root');
 
 createSite(root, url);
@@ -21,7 +22,7 @@ function createUserPage(setup, links, root) {
     const avatarBlock = document.createElement('div');
     avatarBlock.classList.add('avatar-block');
     root.style = pageBackgroundStyle;
-    
+
     setTitle(page);
     setAvatar(avatarBlock, avatar);
     setTitleText(avatarBlock, username)
