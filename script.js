@@ -58,7 +58,6 @@ function setLink(linkData, defaultButtonsStyle) {
 
     const linkItem = document.createElement('a');
     linkItem.setAttribute('href', link);
-    linkItem.setAttribute('target', "blank");
     const linkText = document.createElement('span');
     linkText.innerText = text;
     linkItem.appendChild(linkText);
