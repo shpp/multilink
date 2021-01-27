@@ -15,16 +15,25 @@ function createSite(root, url) {
         })
 }
 
+function setFavicon(avatar) {
+    const favicon = document.createElement('link')
+    favicon.rel = 'icon';
+    favicon.href = avatar;
+    favicon.type = 'image/png';
+    document.head.appendChild(favicon);
+}
+
 function createUserPage(setup, links, root) {
 
-    const { pageBackgroundStyle, page, username, avatar, defaultButtonsStyle } = setup;
+    const { pageBackgroundStyle, username, avatar, defaultButtonsStyle } = setup;
 
     const avatarBlock = document.createElement('div');
-    avatarBlock.classList.add('avatar-block');
+    avatarBlock.classList.add('container');
     root.style = pageBackgroundStyle;
 
-    setTitle(page);
+    setTitle(username);
     setAvatar(avatarBlock, avatar);
+    setFavicon(avatar);
     setTitleText(avatarBlock, username)
 
     root.append(avatarBlock);
@@ -35,7 +44,7 @@ function createUserPage(setup, links, root) {
 
 function setLinks(links, defaultButtonsStyle) {
     const linksBlock = document.createElement('div');
-    linksBlock.classList.add('links-block');
+    linksBlock.classList.add('container');
 
     links.forEach(link => {
         linksBlock.append(setLink(link, defaultButtonsStyle));
@@ -50,8 +59,15 @@ function setLink(linkData, defaultButtonsStyle) {
     const linkItem = document.createElement('a');
     linkItem.setAttribute('href', link);
     linkItem.setAttribute('target', "blank");
-    linkItem.innerText = text;
-    linkItem.style = customStyle ? customStyle : defaultButtonsStyle;
+    const linkText = document.createElement('span');
+    linkText.innerText = text;
+    linkItem.appendChild(linkText);
+    if (customStyle || defaultButtonsStyle) {
+        linkItem.style = customStyle || defaultButtonsStyle;
+    } else {
+        linkItem.classList.add('default-button')
+    }
+
 
     return linkItem;
 }
