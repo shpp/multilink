@@ -63,7 +63,7 @@ function setLink(linkData, defaultButtonsStyle) {
     linkText.innerText = text;
     linkItem.appendChild(linkText);
     if (customStyle || defaultButtonsStyle) {
-        linkItem.style = customStyle || defaultButtonsStyle;
+        linkItem.style = defaultButtonsStyle + customStyle;
     } else {
         linkItem.classList.add('default-button')
     }
