@@ -29,7 +29,9 @@ function createUserPage(setup, links, root) {
 
     const avatarBlock = document.createElement('div');
     avatarBlock.classList.add('container');
-    root.style = pageBackgroundStyle;
+    const pageStyles = document.createElement('style');
+    pageStyles.innerHTML = pageBackgroundStyle;
+    document.head.appendChild(pageStyles);
 
     setTitle(username);
     setAvatar(avatarBlock, avatar);
